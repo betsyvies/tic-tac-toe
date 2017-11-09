@@ -2,7 +2,9 @@ window.onload = function() {
   var board = document.querySelector('.board-js');
   board.addEventListener('click', addX);  
   var button = document.getElementById('button');
-  button.addEventListener('click', reset);  
+  button.addEventListener('click', reset);
+  var message = document.getElementById("message");
+  message.addEventListener('click', reset);
 }
 
 var centinel = true;
@@ -35,39 +37,35 @@ function winer() {
              [cell7.textContent, cell8.textContent, cell9.textContent]];
     /*Se iteran horizontales y verticales*/
     for (i = 0; i < 3; i++){ 
-        if (matrix[i][0] == matrix[i][1] && matrix[i][1] == matrix[i][2]){
-            if (matrix[i][0] == 'x'){
-                alert("Gana el jugador 1");
-                reset();
-            } else if (matrix[i][0] == 'o'){
-                alert("Gana el jugador 2");
-                reset();
-            }
-        } else if (matrix[0][i] == matrix[1][i] && matrix[1][i] == matrix[2][i]){
-            if (matrix[0][i] == 'x'){
-                alert("Gana el jugador 1");
-                reset();
-            } else if (matrix[0][i] == 'o'){
-                alert("Gana el jugador 2");
-                reset();
-            }
+      if (matrix[i][0] == matrix[i][1] && matrix[i][1] == matrix[i][2]){
+        if (matrix[i][0] == 'x') {
+          message.textContent = "Gana el jugador 1";
+        } 
+        else if (matrix[i][0] == 'o') {
+          message.textContent = "Gana el jugador 2";
         }
-    } /*Se iteran diagonales*/
+      } 
+      else if (matrix[0][i] == matrix[1][i] && matrix[1][i] == matrix[2][i]){
+        if (matrix[0][i] == 'x'){
+          message.textContent = "Gana el jugador 1";
+        } 
+        else if (matrix[0][i] == 'o'){
+          message.textContent = "Gana el jugador 2";
+        }
+      }
+    } 
+    /*Se iteran diagonales*/
     if (matrix[0][0] == matrix[1][1] && matrix[1][1] == matrix[2][2]){
         if (matrix[0][0] == 'x'){
-            alert("Gana el jugador 1");
-            reset();
+          message.textContent = "Gana el jugador 1";
         } else if (matrix[0][0] == 'o'){
-            alert("Gana el jugador 2");
-            reset();
+          message.textContent = "Gana el jugador 2";
         }
     } else if (matrix[0][2] == matrix[1][1] && matrix[1][1] == matrix[2][0]){
         if (matrix[0][2] == 'x'){
-            alert("Gana el jugador 1");
-            reset();
+          message.textContent = "Gana el jugador 1";
         } else if (matrix[0][2] == 'o'){
-            alert("Gana el jugador 2");
-            reset();
+          message.textContent = "Gana el jugador 2";
         }
     }
     for (i = 0; i < 3; i++){
@@ -77,8 +75,7 @@ function winer() {
             }
         }
     }
-    alert("!Empate!");
-    reset();
+    message.textContent = "¡Empate!";
 }
 
 function reset() {
@@ -90,7 +87,9 @@ function reset() {
   cell6.textContent = '';
   cell7.textContent = '';
   cell8.textContent = '';
-  cell9.textContent = '';    
+  cell9.textContent = '';   
+  message.textContent = '';  
 }
- 
+
+
 

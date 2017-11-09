@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+#message {
+    text-align: center;
+    font-size: 25px;
+    color: #ffc107;
+    margin-top: 50px;
+}
+
 .board {
     width: 300px;
     height: 300px;
