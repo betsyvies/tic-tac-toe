@@ -8,26 +8,25 @@
     <title>Tic tac toe</title>
   </head>
   <body>
-    <table class="board board-js">
-      <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-    <button class="button">reset</button>
+    <h3 id="message"></h3>
+    <div class="board board-js">
+      <div class="row">
+        <div id="cell-0-0" data-row = "0" data-column = "0" class="cell"></div>
+        <div id="cell-0-1" data-row = "0" data-column = "1" class="cell"></div>
+        <div id="cell-0-2" data-row = "0" data-column = "2" class="cell"></div>
+      </div>
+      <div class="row">
+        <div id="cell-1-0" data-row = "1" data-column = "0" class="cell"></div>
+        <div id="cell-1-1" data-row = "1" data-column = "1" class="cell"></div>
+        <div id="cell-1-2" data-row = "1" data-column = "2" class="cell"></div>
+      </div>
+      <div class="row">
+        <div id="cell-2-0" data-row = "2" data-column = "0" class="cell"></div>
+        <div id="cell-2-1" data-row = "2" data-column = "1" class="cell"></div>
+        <div id="cell-2-2" data-row = "2" data-column = "2" class="cell"></div>
+      </div>
+    </div>
+    <button id="button">reset</button>
     <script src="js/app.js"></script>
   </body>
 </html>
